@@ -16,8 +16,11 @@ public class Problem {
      */
 
     public static String stringCopies(String word, int n) {
-
-        return null;
+        String output = "";
+        for (int i = 0; i<n;i++){
+            output += word;
+        }
+        return output;
     }
 
 
@@ -32,8 +35,14 @@ public class Problem {
      */
 
     public static Boolean followedX(String str) {
-
-        return null;
+        Boolean doubleX = false;
+        for (int i = 0; i < str.length()-1;i++){
+            if (str.charAt(i) == 'x' && str.charAt(i + 1) == 'x') {
+                doubleX = true;
+                break;
+            }
+        }
+        return doubleX;
     }
 
 
@@ -50,8 +59,20 @@ public class Problem {
      */
 
     public static Integer subTwo(String str) {
+        Integer counter = 0;
+        Integer lengthOfString = str.length();
 
-        return null;
+        if (lengthOfString <= 2){
+            return counter;
+        } else {
+            String endSub = str.substring(lengthOfString - 2);
+            for (int i = 0; i < lengthOfString - 2; i++ ){
+                if (str.substring(i, i + 2).equals(endSub)){
+                    counter += 1;
+                }
+            }
+        }
+        return counter;
     }
 
 
@@ -70,8 +91,14 @@ public class Problem {
      */
 
     public static Boolean basicNumbers123(int[] nums) {
-
-        return null;
+        int lengthOfArray = nums.length-1;
+        boolean output = false;
+        for (int i = 0; i < lengthOfArray; i++){
+            if (nums[i]==1 && nums[i+1]==2 && nums[i+2]==3){
+                output = true;
+            }
+        }
+        return output;
     }
 
 
@@ -90,8 +117,14 @@ public class Problem {
      */
 
     public static String scrambleOfLetters(String scramble) {
-
-        return null;
+        int lengthOfString = scramble.length() ;
+        String output = "";
+        for (int i = 0; i <lengthOfString; i++){
+            if (i == 0 || i == 1 || i == 4 || i == 5 || i == 8 || i == 9){
+                output +=scramble.charAt(i);
+            }
+        }
+        return output;
     }
 
 
@@ -108,7 +141,15 @@ public class Problem {
      */
 
     public static Boolean dontAcceptTriples(int[] score) {
+        int lengthOfArray = score.length-1;
+        boolean output = true;
 
-        return null;
+        for (int i = 0; i < lengthOfArray; i++){
+            int tempScore = score[i];
+            if (score[i+1] == tempScore && score[i+2] == tempScore){
+                output = false;
+            }
+        }
+        return output;
     }
 }
